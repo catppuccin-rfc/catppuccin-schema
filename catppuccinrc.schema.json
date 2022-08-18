@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/catppuccin-rfc/catppuccinrc/raw/main/catppuccinrc.schema.json",
+  "title": "Catppuccin Port RC",
+  "type": "object",
+  "default": {},
+  "required": [
+    "app_name",
+    "binary_name",
+    "homepage",
+    "contributors",
+    "screenshot"
+  ],
+  "properties": {
+    "app_name": {
+      "title": "Name of the application",
+      "type": "string",
+      "default": ""
+    },
+    "binary_name": {
+      "title": "Name of the executable",
+      "type": "string",
+      "default": ""
+    },
+    "homepage": {
+      "title": "",
+      "type": "string",
+      "default": ""
+    },
+    "contributors": {
+      "title": "Contributors to the port",
+      "type": "array",
+      "default": [],
+      "items": {
+        "title": "Contributors",
+        "type": "object",
+        "default": {},
+        "required": ["name", "url"],
+        "properties": {
+          "name": {
+            "title": "Name of the contributor, how it should be displayed on the Website and README.md",
+            "type": "string",
+            "default": ""
+          },
+          "url": {
+            "title": "GitHub profile of the contributor",
+            "type": "string",
+            "default": ""
+          }
+        }
+      }
+    },
+    "screenshot": {
+      "title": "Method to use for the generation of the showcase screenshot",
+      "type": "string",
+      "default": "",
+      "enum": ["composite", "grid", "stacked"]
+    },
+    "installation": {
+      "title": "Installation instructions for the Catppuccin CLI",
+      "type": "object",
+      "default": {},
+      "required": ["location", "flavours", "one_flavour", "modes"],
+      "properties": {
+        "location": {
+          "title": "TODO",
+          "type": "object",
+          "default": {},
+          "properties": {
+            "linux": {
+              "title": "TODO",
+              "type": "string",
+              "default": ""
+            },
+            "macos": {
+              "title": "TODO",
+              "type": "string",
+              "default": ""
+            },
+            "windows": {
+              "title": "TODO",
+              "type": "string",
+              "default": ""
+            }
+          }
+        },
+        "flavours": {
+          "title": "TODO",
+          "type": "object",
+          "default": {},
+          "required": ["all", "latte", "frappe", "macchiato", "mocha", "to"],
+          "properties": {
+            "all": {
+              "title": "TODO",
+              "type": "object",
+              "default": {},
+              "required": ["default"],
+              "properties": {
+                "default": {
+                  "title": "TODO",
+                  "type": "array",
+                  "default": [],
+                  "items": {
+                    "title": "A Schema",
+                    "type": "string",
+                    "default": ""
+                  }
+                },
+                "additional": {
+                  "title": "TODO",
+                  "type": "object",
+                  "default": {},
+                  "properties": {}
+                }
+              }
+            },
+            "latte": {
+              "title": "TODO",
+              "type": "object",
+              "default": {},
+              "required": ["default"],
+              "properties": {
+                "default": {
+                  "title": "TODO",
+                  "type": "array",
+                  "default": [],
+                  "items": {
+                    "title": "A Schema",
+                    "type": "string",
+                    "default": ""
+                  }
+                },
+                "additional": {
+                  "title": "TODO",
+                  "type": "object",
+                  "default": {},
+                  "properties": {}
+                }
+              }
+            },
+            "frappe": {
+              "title": "TODO",
+              "type": "object",
+              "default": {},
+              "required": ["default"],
+              "properties": {
+                "default": {
+                  "title": "TODO",
+                  "type": "array",
+                  "default": [],
+                  "items": {
+                    "title": "A Schema",
+                    "type": "string",
+                    "default": ""
+                  }
+                },
+                "additional": {
+                  "title": "TODO",
+                  "type": "object",
+                  "default": {},
+                  "required": [],
+                  "properties": {}
+                }
+              }
+            },
+            "macchiato": {
+              "title": "TODO",
+              "type": "object",
+              "default": {},
+              "required": ["default"],
+              "properties": {
+                "default": {
+                  "title": "TODO",
+                  "type": "array",
+                  "default": [],
+                  "items": {
+                    "title": "A Schema",
+                    "type": "string",
+                    "default": ""
+                  }
+                },
+                "additional": {
+                  "title": "TODO",
+                  "type": "object",
+                  "default": {},
+                  "properties": {}
+                }
+              }
+            },
+            "mocha": {
+              "title": "TODO",
+              "type": "object",
+              "default": {},
+              "required": ["default"],
+              "properties": {
+                "default": {
+                  "title": "TODO",
+                  "type": "array",
+                  "default": [],
+                  "items": {
+                    "title": "A Schema",
+                    "type": "string",
+                    "default": ""
+                  }
+                },
+                "additional": {
+                  "title": "TODO",
+                  "type": "object",
+                  "default": {},
+                  "properties": {}
+                }
+              }
+            },
+            "to": {
+              "title": "TODO",
+              "type": "string",
+              "default": ""
+            }
+          }
+        },
+        "one_flavour": {
+          "title": "Set to true, if only a single flavour can be installed at a time",
+          "type": "boolean",
+          "default": false
+        },
+        "modes": {
+          "title": "Additional modes for the installation",
+          "type": "array",
+          "default": [],
+          "items": {
+            "title": "A Schema",
+            "type": "string",
+            "default": ""
+          }
+        }
+      }
+    }
+  }
+}
